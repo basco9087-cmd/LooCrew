@@ -1,1 +1,96 @@
-Readme
+# LooCrew (aka "Sh*tMap")
+
+Community-powered bathroom discovery and social journaling for the moments that matter most.
+
+## Vision
+Give people confidence to find (and share) great restrooms anywhere while keeping the experience lighthearted, respectful, and fun.
+
+## Audience & Personas
+- **Urban Explorer**: Moving around the city, wants quick access to clean, safe toilets near transit hubs.
+- **Remote Worker**: Needs dependable restroom options between coffee shops and coworking spots.
+- **Social Crew**: Friends who enjoy playful check-ins, badges, and inside jokes about their adventures.
+- **Parent on the Go**: Values amenities like changing tables, family-friendly stalls, and clear access info.
+
+## Core Use Cases
+1. Locate a nearby restroom that meets specific preferences (cleanliness, accessibility, type, hours).
+2. Contribute to community knowledge with ratings, reviews, photos, and details.
+3. Share a humorous, opt-in check-in with friends and react together in a private feed.
+4. Track personal restroom streaks, badges, and leaderboard placement for motivation.
+
+## Experience Overview
+
+### Map & Finder Flow
+1. Home screen opens on a map centered around the user.
+2. Filters surface stalls by cleanliness score, accessibility, type (mall, public, cafe), or open status.
+3. Tapping a pin reveals a card with ratings, reviews, amenities (TP, soap, gender neutral), opening hours, and access instructions (paywall, key required).
+4. From the card, users can navigate, bookmark, view photos, or contribute a new review.
+
+### Check-in & Social Flow
+1. Tap "Drop a Log" to select the restroom (from map or search).
+2. Add a playful caption, optional photo (stall only), mood sticker, and privacy scope (friends-only, private log).
+3. Post lands in the friends feed with reactions (lol, clutch save, sympathy) and comment thread.
+4. Activity counts toward streaks, badges ("Mall Sh*tter"), and weekly leaderboards (e.g., "Most Consistent Logger").
+
+## Feature Details
+
+### Restroom Profiles
+- Attributes: name, address, type, accessibility tags, opening hours, access notes, average rating.
+- Community data: cleanliness score, smell, privacy, TP availability, wait time, photo gallery (moderated), last verified timestamp.
+- Admin tools for deduplicating pins, flagging inaccuracies, and highlighting trusted partners.
+
+### Reviews & Ratings
+- Structured ratings (1-5) for cleanliness, smell, privacy, supplies.
+- Optional short text review plus photo uploads (auto blur faces, license plates).
+- Reputation system weights scores from high-trust contributors.
+
+### Social Layer
+- Friends list with mutual acceptance to unlock feeds.
+- Check-in posts show location, badge progression, and optional stats like total visits.
+- Reactions and lightweight comment threads keep the tone friendly.
+- Private log mode maintains personal history without social sharing.
+
+### Leaderboards / Gamification
+- Weekly leaderboard by count of check-ins, variety of locations, or helpful reviews.
+- Badge system tracks milestones (first review, five malls, accessibility champion).
+- Optional push notifications for streak reminders or friend achievements.
+
+## Moderation & Safety
+- Photo moderation pipeline: automated filters (nudity, faces) plus human review spot checks.
+- Community reporting for inappropriate content, false listings, or harassment.
+- Location privacy: precise coordinates hidden from non-friends; ability to remove personal logs.
+- Data retention policy with clear opt-out and export options.
+
+## Monetization & Growth
+- Potential partnerships with cafes, coworking spaces, or gas stations for featured placement.
+- Premium tier: ad-free experience, advanced filters (family rooms, bidets), offline maps.
+- Sponsored badges or quests (e.g., "City Clean Freak" powered by a cleaning brand).
+- Growth loops via referral rewards, streak sharing, and community challenges.
+
+## MVP Scope (Phase 1)
+- Map view with geolocation, restroom pins, basic filters (cleanliness, open now).
+- Restroom detail view with community ratings, reviews, and access notes.
+- Submit review with structured ratings and optional photo (moderated before publishing).
+- Friends-only check-ins with captions and reactions (no comments to start).
+- Basic gamification: streak counter and one leaderboard (weekly check-ins).
+- Admin dashboard snippet for verifying new restroom submissions.
+
+## Technical Notes
+- Mobile-first (iOS + Android) using React Native or Flutter for shared UI; native modules for maps, location permissions, and push notifications.
+- Backend with location-aware datastore (e.g., PostgreSQL + PostGIS or Firestore + Geo queries).
+- Map provider: Mapbox or Google Maps SDK with custom pin rendering.
+- Media storage and moderation: cloud storage (S3, Firebase Storage) plus third-party moderation APIs.
+- Real-time features (feed updates, reactions) via WebSockets or managed services (Firebase RTDB, PubNub).
+- Authentication: phone number or social login with two-factor option.
+
+## Future Ideas
+- Offline mode with cached toilets and user-created notes for spotty coverage.
+- Accessibility-first mode highlighting stalls with wide doors, rails, or adult changing tables.
+- Integration with transit apps or travel guides for tourism contexts.
+- AR overlay to guide users to restrooms in large malls or venues.
+- Brand collaborations for "Pop-up Relief Stations" at events.
+
+## Open Questions
+- What level of anonymity do users want when sharing check-ins?
+- How do we balance playful tone with respectful language in public spaces?
+- What incentives best encourage high-quality, honest reviews without spam?
+- Should we allow global discovery or keep the network mostly friends-only at launch?
